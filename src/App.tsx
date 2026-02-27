@@ -90,7 +90,7 @@ export default function App() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-4xl md:text-6xl font-black text-gray-900 mb-6 leading-tight">
-              150 Dinâmicas Prontas Para <span className="text-orange-600">Educação Infantil</span>
+              150 Dinâmicas Prontas Para <span className="text-orange-600">Educação Especial</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
               Atividades lúdicas, educativas e prontas para aplicar — diversão e aprendizado em cada atividade.
@@ -158,7 +158,7 @@ export default function App() {
       <section className="py-20 bg-orange-600 text-white px-4 relative overflow-hidden">
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h2 className="text-3xl md:text-5xl font-black mb-8">
-            📚 Dinâmicas Especiais Para Educação Infantil
+            📚 Dinâmicas Especiais Para Educação Especial
           </h2>
           <p className="text-xl opacity-90 mb-10 max-w-2xl mx-auto">
             Um acervo completo com tudo o que você precisa para transformar suas aulas em momentos inesquecíveis.
@@ -187,7 +187,7 @@ export default function App() {
             {[
               {
                 name: "Profª Carla",
-                role: "Professora de Educação Infantil",
+                role: "Professora de Educação Especial",
                 img: "https://picsum.photos/seed/carla/100/100",
                 text: "As dinâmicas mudaram minha rotina. As crianças ficam super engajadas e eu economizo muito tempo de planejamento!"
               },
