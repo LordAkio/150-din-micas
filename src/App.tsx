@@ -69,6 +69,13 @@ export default function App() {
     return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
   };
 
+  const scrollToPricing = () => {
+    const element = document.getElementById('pricing');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#FFFBF5] font-sans text-gray-900 selection:bg-orange-200">
       {/* Top Banner */}
@@ -97,7 +104,10 @@ export default function App() {
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-              <button className="w-full sm:w-auto bg-orange-600 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-orange-700 transition-all shadow-lg shadow-orange-200 transform hover:-translate-y-1">
+              <button 
+                onClick={scrollToPricing}
+                className="w-full sm:w-auto bg-orange-600 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-orange-700 transition-all shadow-lg shadow-orange-200 transform hover:-translate-y-1 cursor-pointer"
+              >
                 Quero Acessar Agora
               </button>
             </div>
@@ -163,7 +173,10 @@ export default function App() {
           <p className="text-xl opacity-90 mb-10 max-w-2xl mx-auto">
             Um acervo completo com tudo o que você precisa para transformar suas aulas em momentos inesquecíveis.
           </p>
-          <button className="bg-white text-orange-600 px-12 py-5 rounded-full font-black text-xl hover:bg-orange-50 transition-all shadow-2xl transform hover:scale-105">
+          <button 
+            onClick={scrollToPricing}
+            className="bg-white text-orange-600 px-12 py-5 rounded-full font-black text-xl hover:bg-orange-50 transition-all shadow-2xl transform hover:scale-105 cursor-pointer"
+          >
             QUERO ACESSAR AGORA
           </button>
         </div>
@@ -236,7 +249,7 @@ export default function App() {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-20 bg-[#FFFBF5] px-4">
+      <section id="pricing" className="py-20 bg-[#FFFBF5] px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">💰 Escolha seu pacote</h2>
@@ -396,7 +409,10 @@ export default function App() {
             <p className="text-xl opacity-90 mb-12 relative z-10">
               Junte-se a mais de 2.500 educadores que já estão usando nossas dinâmicas.
             </p>
-            <button className="bg-white text-orange-600 px-12 py-6 rounded-full font-black text-2xl hover:bg-orange-50 transition-all shadow-xl flex items-center gap-3 mx-auto relative z-10">
+            <button 
+              onClick={scrollToPricing}
+              className="bg-white text-orange-600 px-12 py-6 rounded-full font-black text-2xl hover:bg-orange-50 transition-all shadow-xl flex items-center gap-3 mx-auto relative z-10 cursor-pointer"
+            >
               TIREI MINHAS DÚVIDAS, QUERO COMPRAR!
               <ArrowRight className="w-6 h-6" />
             </button>
