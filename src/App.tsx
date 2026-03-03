@@ -54,6 +54,7 @@ const FAQItem = ({ question, answer }: { question: string, answer: string }) => 
 
 export default function App() {
   const [timeLeft, setTimeLeft] = useState(30 * 60); // 30 minutes in seconds
+  const [isUpsellOpen, setIsUpsellOpen] = useState(false);
 
   React.useEffect(() => {
     if (timeLeft <= 0) return;
@@ -284,7 +285,10 @@ export default function App() {
                 </li>
               </ul>
 
-              <button className="w-full py-4 rounded-full border-2 border-orange-600 text-orange-600 font-bold hover:bg-orange-50 transition-all">
+              <button 
+                onClick={() => setIsUpsellOpen(true)}
+                className="w-full py-4 rounded-full border-2 border-orange-600 text-orange-600 font-bold hover:bg-orange-50 transition-all cursor-pointer"
+              >
                 Começar Agora
               </button>
             </div>
@@ -441,6 +445,82 @@ export default function App() {
           </p>
         </div>
       </footer>
+
+      {/* Upsell Popup */}
+      <AnimatePresence>
+        {isUpsellOpen && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsUpsellOpen(false)}
+              className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+            />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              className="relative bg-white w-full max-w-lg rounded-[40px] overflow-hidden shadow-2xl"
+            >
+              <div className="bg-orange-600 p-6 text-white text-center">
+                <div className="inline-block bg-white/20 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-2">
+                  Oferta Relâmpago ⚡
+                </div>
+                <h3 className="text-2xl font-black">ESPERE! TEMOS UMA OFERTA ESPECIAL</h3>
+              </div>
+              
+              <div className="p-8">
+                <p className="text-gray-600 text-center mb-6">
+                  Por apenas mais <span className="font-bold text-orange-600">R$7</span>, você leva o <span className="font-bold">PACOTE PREMIUM COMPLETO</span> com todos os bônus!
+                </p>
+
+                <div className="bg-orange-50 rounded-3xl p-6 mb-8">
+                  <div className="flex items-center justify-center gap-2 mb-4">
+                    <span className="text-gray-400 line-through text-sm">De R$27</span>
+                    <span className="text-3xl font-black text-gray-900">Por R$17</span>
+                  </div>
+                  
+                  <ul className="space-y-3 text-sm">
+                    <li className="flex items-center gap-2 text-gray-700">
+                      <CheckCircle2 className="w-4 h-4 text-green-500" />
+                      150 Dinâmicas em PDF
+                    </li>
+                    <li className="flex items-center gap-2 text-gray-700">
+                      <CheckCircle2 className="w-4 h-4 text-green-500" />
+                      Acesso Vitalício
+                    </li>
+                    <li className="flex items-center gap-2 text-gray-700 font-bold text-orange-600">
+                      <Star className="w-4 h-4 fill-current" />
+                      BÔNUS: 20 Atividades Lúdicas
+                    </li>
+                    <li className="flex items-center gap-2 text-gray-700 font-bold text-orange-600">
+                      <Star className="w-4 h-4 fill-current" />
+                      BÔNUS: 15 Desenhos para Colorir
+                    </li>
+                    <li className="flex items-center gap-2 text-gray-700 font-bold text-orange-600">
+                      <Star className="w-4 h-4 fill-current" />
+                      BÔNUS: Manual de Inclusão
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="space-y-4">
+                  <button className="w-full py-5 rounded-full bg-orange-600 text-white font-black text-lg hover:bg-orange-700 transition-all shadow-lg shadow-orange-200 cursor-pointer">
+                    QUERO APROVEITAR ESTA OFERTA
+                  </button>
+                  <button 
+                    onClick={() => setIsUpsellOpen(false)}
+                    className="w-full py-2 text-gray-400 text-sm font-medium hover:text-gray-600 transition-colors cursor-pointer"
+                  >
+                    Não, quero manter apenas o plano de R$10
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
