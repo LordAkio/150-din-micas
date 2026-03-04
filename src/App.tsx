@@ -341,7 +341,9 @@ export default function App() {
               </ul>
 
               <button className="w-full py-5 rounded-full bg-orange-600 text-white font-black text-lg hover:bg-orange-700 transition-all shadow-lg shadow-orange-200">
-                QUERO O PACOTE PREMIUM
+                <a href="https://www.ggcheckout.com/checkout/v5/kp9bKgOWkisRpPopdPQy" className="block w-full h-full">
+                  QUERO O PACOTE PREMIUM
+                </a>
               </button>
               <p className="text-center text-xs text-gray-500 mt-4 font-medium">
                 +2.500 pessoas já escolheram este
@@ -506,15 +508,18 @@ export default function App() {
                 </div>
 
                 <div className="space-y-4">
-                  <button className="w-full py-5 rounded-full bg-orange-600 text-white font-black text-lg hover:bg-orange-700 transition-all shadow-lg shadow-orange-200 cursor-pointer">
+                  <a 
+                    href="https://www.ggcheckout.com/checkout/v5/k7Ir5W6rnmBymsd0FkyO"
+                    className="block w-full py-5 rounded-full bg-orange-600 text-white font-black text-lg hover:bg-orange-700 transition-all shadow-lg shadow-orange-200 cursor-pointer text-center"
+                  >
                     QUERO APROVEITAR ESTA OFERTA
-                  </button>
-                  <button 
-                    onClick={() => setIsUpsellOpen(false)}
-                    className="w-full py-2 text-gray-400 text-sm font-medium hover:text-gray-600 transition-colors cursor-pointer"
+                  </a>
+                  <a 
+                    href="https://www.ggcheckout.com/checkout/v5/5QXYxwDBqTVIQuuSzhf3"
+                    className="block w-full py-2 text-gray-400 text-sm font-medium hover:text-gray-600 transition-colors cursor-pointer text-center"
                   >
                     Não, quero manter apenas o plano de R$10
-                  </button>
+                  </a>
                 </div>
               </div>
             </motion.div>
