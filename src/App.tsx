@@ -285,12 +285,16 @@ export default function App() {
                 </li>
               </ul>
 
-              <button 
-                onClick={() => setIsUpsellOpen(true)}
-                className="w-full py-4 rounded-full border-2 border-orange-600 text-orange-600 font-bold hover:bg-orange-50 transition-all cursor-pointer"
+              <a 
+                href="https://www.ggcheckout.com/checkout/v5/5QXYxwDBqTVIQuuSzhf3?utm_source=FB&utm_campaign={{campaign.name}}|{{campaign.id}}&utm_medium={{adset.name}}|{{adset.id}}&utm_content={{ad.name}}|{{ad.id}}&utm_term={{placement}}"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setIsUpsellOpen(true);
+                }}
+                className="w-full py-4 rounded-full border-2 border-orange-600 text-orange-600 font-bold hover:bg-orange-50 transition-all cursor-pointer text-center block"
               >
                 Começar Agora
-              </button>
+              </a>
             </div>
 
             {/* Premium Package */}
@@ -341,7 +345,7 @@ export default function App() {
               </ul>
 
               <button className="w-full py-5 rounded-full bg-orange-600 text-white font-black text-lg hover:bg-orange-700 transition-all shadow-lg shadow-orange-200">
-                <a href="https://www.ggcheckout.com/checkout/v5/kp9bKgOWkisRpPopdPQy" className="block w-full h-full">
+                <a href="https://www.ggcheckout.com/checkout/v5/kp9bKgOWkisRpPopdPQy?utm_source=FB&utm_campaign={{campaign.name}}|{{campaign.id}}&utm_medium={{adset.name}}|{{adset.id}}&utm_content={{ad.name}}|{{ad.id}}&utm_term={{placement}}" className="block w-full h-full">
                   QUERO O PACOTE PREMIUM
                 </a>
               </button>
@@ -509,13 +513,13 @@ export default function App() {
 
                 <div className="space-y-4">
                   <a 
-                    href="https://www.ggcheckout.com/checkout/v5/k7Ir5W6rnmBymsd0FkyO"
+                    href="https://www.ggcheckout.com/checkout/v5/k7Ir5W6rnmBymsd0FkyO?utm_source=FB&utm_campaign={{campaign.name}}|{{campaign.id}}&utm_medium={{adset.name}}|{{adset.id}}&utm_content={{ad.name}}|{{ad.id}}&utm_term={{placement}}"
                     className="block w-full py-5 rounded-full bg-orange-600 text-white font-black text-lg hover:bg-orange-700 transition-all shadow-lg shadow-orange-200 cursor-pointer text-center"
                   >
                     QUERO APROVEITAR ESTA OFERTA
                   </a>
                   <a 
-                    href="https://www.ggcheckout.com/checkout/v5/5QXYxwDBqTVIQuuSzhf3"
+                    href="https://www.ggcheckout.com/checkout/v5/5QXYxwDBqTVIQuuSzhf3?utm_source=FB&utm_campaign={{campaign.name}}|{{campaign.id}}&utm_medium={{adset.name}}|{{adset.id}}&utm_content={{ad.name}}|{{ad.id}}&utm_term={{placement}}"
                     className="block w-full py-2 text-gray-400 text-sm font-medium hover:text-gray-600 transition-colors cursor-pointer text-center"
                   >
                     Não, quero manter apenas o plano de R$10
